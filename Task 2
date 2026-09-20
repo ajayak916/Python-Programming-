@@ -1,0 +1,29 @@
+stocks = {
+"AAPL": 180,
+"TSLA": 250,
+"GOOGLE": 150,
+"AMAZON": 200
+}
+
+total_investment = 0
+
+print("Stock Portfolio Tracker")
+print("Available stocks:", ", ".join(stocks.keys()))
+
+while True:
+stock = input("Enter stock name (or 'done' to finish): ").upper()
+
+if stock == "DONE":  
+    break  
+
+if stock in stocks:  
+    quantity = int(input("Enter quantity: "))  
+
+    value = stocks[stock] * quantity  
+    total_investment += value  
+
+    print("Investment in", stock, "=", value)  
+else:  
+    print("Stock not found.")
+
+print("\nTotal Investment =", total_investment)
